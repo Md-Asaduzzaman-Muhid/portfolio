@@ -198,8 +198,10 @@ Home sections
 }
 .carousel-content img{
 	max-width: 300px;
-	border-radius: 50%;
-	margin: 0 auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #00c1c1;
 }
 
 /* --- heading --- */
