@@ -1,239 +1,140 @@
-/* JS Document */
+(function ($) {
 
-/******************************
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
 
-[Table of Contents]
+  $('.back-to-top').click(function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
 
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Home Slider
-5. Init Google Map
-6. Init Testimonials Slider
+  //navigation
+  $('.navigation').onePageNav({
+    scrollOffset: 0
+  });
+
+  $(".navbar-collapse a").on('click', function () {
+    $(".navbar-collapse.collapse").removeClass('in');
+  });
+
+  //
+
+  // Smooth scroll for the get started button
+  $('.btn-get-started').on('click', function(e) {
+      e.preventDefault();
+      var target = $(this.hash);
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top 
+        }, 700);
+      }
+  });
+
+  // Fixed navbar
+  $(window).scroll(function () {
+
+    var scrollTop = $(window).scrollTop();
+
+    if (scrollTop > 200) {
+      $('.navbar-default').css('display', 'block');
+      $('.navbar-default').addClass('fixed-to-top');
+
+    } else if (scrollTop == 0) {
+
+      $('.navbar-default').removeClass('fixed-to-top');
+    }
+  });
+
+  // Intro carousel
+  var introCarousel = $("#introCarousel");
+  var introCarouselIndicators = $("#intro-carousel-indicators");
+  introCarousel.find(".carousel-inner").children(".item").each(function(index) {
+    (index === 0) ?
+    introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "' class='active'></li>") :
+    introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'></li>");
+
+    $(this).css("background-image", "url('" + $(this).children('.carousel-background').children('img').attr('src') +"')");
+    $(this).children('.carousel-background').remove();
+  });
+
+  // introCarousel.on('slid.bs.carousel', function (e) {
+  //   $(this).find('h2').addClass('animated fadeInDown');
+  //   $(this).find('p').addClass('animated fadeInUp');
+  //   $(this).find('.btn-get-started').addClass('animated fadeInUp');
+  // });
 
 
-******************************/
+  //parallax
+  if ($('#parallax1').length || $('#parallax2').length) {
 
-$(document).ready(function()
-{
-	"use strict";
+    $(window).stellar({
+      responsive: true,
+      scrollProperty: 'scroll',
+      parallaxElements: false,
+      horizontalScrolling: false,
+      horizontalOffset: 0,
+      verticalOffset: 0
+    });
 
-	/* 
+  }
 
-	1. Vars and Inits
+  function navbar() {
 
-	*/
+    if ($(window).scrollTop() > 1) {
+      $('#navigation').addClass('show-nav');
+    } else {
+      $('#navigation').removeClass('show-nav');
+    }
 
-	var header = $('.header');
-	var map;
+  }
 
-	initMenu();
-	initHomeSlider();
-	initGoogleMap();
-	initTestSlider();
+  $(document).ready(function () {
 
-	setHeader();
+    var browserWidth = $(window).width();
 
-	$(window).on('resize', function()
-	{
-		setHeader();
+    if (browserWidth > 560) {
 
-		setTimeout(function()
-		{
-			$(window).trigger('resize.px.parallax');
-		}, 375);
-	});
+      $(window).scroll(function () {
+        navbar();
+      });
+    }
 
-	$(document).on('scroll', function()
-	{
-		setHeader();
-	});
+  });
 
-	/* 
 
-	2. Set Header
+  $(window).resize(function () {
 
-	*/
+    var browserWidth = $(window).width();
 
-	function setHeader()
-	{
-		if($(window).scrollTop() > 91)
-		{
-			header.addClass('scrolled');
-		}
-		else
-		{
-			header.removeClass('scrolled');
-		}
-	}
+    if (browserWidth > 560) {
 
-	/* 
+      $(window).scroll(function () {
+        navbar();
+      });
+    }
 
-	3. Init Menu
+  });
 
-	*/
 
-	function initMenu()
-	{
-		if($('.menu').length && $('.hamburger').length)
-		{
-			var menu = $('.menu');
-			var hamburger = $('.hamburger');
-			var close = $('.menu_close');
-			var superOverlay = $('.super_overlay');
+  // Carousel
+  $('.service .carousel').carousel({
+    interval: 4000
+  })
 
-			hamburger.on('click', function()
-			{
-				menu.toggleClass('active');
-				superOverlay.toggleClass('active');
-			});
+  //works
+  $(function () {
+    Grid.init();
+  });
 
-			close.on('click', function()
-			{
-				menu.toggleClass('active');
-				superOverlay.toggleClass('active');
-			});
+  //animation
+  new WOW().init();
 
-			superOverlay.on('click', function()
-			{
-				menu.toggleClass('active');
-				superOverlay.toggleClass('active');
-			});
-		}
-	}
-
-	/* 
-
-	4. Init Home Slider
-
-	*/
-
-	function initHomeSlider()
-	{
-		if($('.home_slider').length)
-		{
-			var homeSlider = $('.home_slider');
-			homeSlider.owlCarousel(
-			{
-				items:1,
-				autoplay:true,
-				autoplayTimeout:8000,
-				loop:true,
-				dots:false,
-				nav:false,
-				mouseDrag:false,
-				smartSpeed:1200
-			});
-
-			if($('.home_slider_nav').length)
-			{
-				var next = $('.home_slider_nav');
-				next.on('click', function()
-				{
-					homeSlider.trigger('next.owl.carousel');
-				});
-			}
-		}
-	}
-
-	/* 
-
-	5. Init Google Map
-
-	*/
-
-	function initGoogleMap()
-	{
-		var myLatlng = new google.maps.LatLng(40.760836, -73.910357);
-    	var mapOptions = 
-    	{
-    		center: myLatlng,
-	       	zoom: 14,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			draggable: true,
-			scrollwheel: false,
-			zoomControl: false,
-			zoomControlOptions:
-			{
-				position: google.maps.ControlPosition.RIGHT_CENTER
-			},
-			mapTypeControl: false,
-			scaleControl: false,
-			streetViewControl: false,
-			rotateControl: false,
-			fullscreenControl: false,
-			styles:
-			[
-			  {
-			    "featureType": "road.highway",
-			    "elementType": "geometry.fill",
-			    "stylers": [
-			      {
-			        "color": "#ffeba1"
-			      }
-			    ]
-			  }
-			]
-    	}
-
-    	// Initialize a map with options
-    	map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-		// Re-center map after window resize
-		google.maps.event.addDomListener(window, 'resize', function()
-		{
-			setTimeout(function()
-			{
-				google.maps.event.trigger(map, "resize");
-				map.setCenter(myLatlng);
-			}, 1400);
-		});
-
-		function newLocation(newLat, newLng)
-		{
-			map.setCenter(
-			{
-				lat : newLat,
-				lng : newLng
-			});
-		}
-
-		var locationList = $('.location_contaner');
-		locationList.each(function()
-		{
-			var loc = $(this);
-			loc.on('click', function()
-			{
-				var newLat = loc.data('lat');
-				var newLng = loc.data('lng');
-				newLocation(newLat, newLng);
-			});
-				
-		});
-	}
-
-	/* 
-
-	6. Init Testimonials Slider
-
-	*/
-
-	function initTestSlider()
-	{
-		if($('.test_slider').length)
-		{
-			var testSlider = $('.test_slider');
-			testSlider.owlCarousel(
-			{
-				items:1,
-				autoplay:true,
-				autoplayHoverPause:true,
-				loop:true,
-				nav:false,
-				dots:true,
-				smartSpeed:1200
-			});
-		}
-	}
-
-});
+})(jQuery);
