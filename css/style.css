@@ -485,12 +485,8 @@ Team
 
 
 /* ================================
-Services
+Review
 ================================= */
-.service.carousel h4,.service.carousel p {
-	text-align: left;
-}
-
 
 .service .carousel-control{
 	background: none;
@@ -499,8 +495,41 @@ Services
 .service .screenshot{
 	overflow: hidden;
 	overflow: hidden;
-	margin-right: auto;
-	margin-left: auto;
+    padding: 20px;
+	margin: 30px 20px;
+	border-radius: 5px;
+    background: #f8f8f8;
+
+}
+.service h3, .service h6{
+	margin-bottom: 0;
+
+}
+.rating{
+	margin-bottom: 30px;
+	color: #EEBD01;
+}
+.service .screenshot:before{
+	content: "";
+	height: 100%;
+	width: 50%;
+	margin: 0 auto;
+	background-color: #00c1c1;
+	border-radius: 5px;
+    position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.review-details{
+	padding: 50px 30px;
+}
+.review-details .quote-icon{
+	font-size: 45px;
+}
+.quote-icon-last{
+	position: absolute;
 }
 
 .service .screenshot img{
@@ -541,6 +570,53 @@ Services
 	text-indent: -999px;
 	cursor: pointer;
 }
+/* ================================
+my-services
+================================= */
+.my-services{
+	background: #2b2b2b;
+}
+.box-icon-classic {
+    padding: 35px 30px;
+    max-width: 370px;
+    margin-bottom: 30px;
+	background: #ffffff;
+	text-align: initial;
+    border-radius: 10px;
+    box-shadow: 0 4px 44px rgb(17 29 48 / 6%);
+    transition: ease-in-out .5s;
+}
+.box-icon-classic .icon-main {
+	position: relative;
+    width: 90px;
+    height: 90px;
+    color: #00c1c1;
+    font-size: 36px;
+    line-height: 90px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid;
+    box-shadow: 0 8px 32px rgb(31 222 130 / 46%);
+    transition: transform 2s;
+    transition: 2s;
+}
+.box-icon-classic .icon-main > i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box-icon-classic:hover {
+	/* box-shadow: 0 4px 44px rgb(17 29 48 / 26%); */
+	background-color: #00c1c1;
+}
+.box-icon-classic:hover .icon-main {
+	transform: scale(1.2); 
+	color: #00c1c1;
+	background: #ffffff;
+}
+
+
 
 
 /* ================================
