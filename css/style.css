@@ -431,14 +431,28 @@ About
 ================================= */
 
 #about .about-img {
-  height: 350px;
-  overflow: hidden;
+  margin: 30px;
+  border: 5px solid #00c1c1;
+border-radius: 5px;
+}
+#about .about-img:before {
+    content: "";
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #00c1c1;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
-#about .about-img img {
+/* #about .about-img img {
   margin-left: -15px;
   max-width: 100%;
-}
+} */
 
 @media (max-width: 768px) {
   #about .about-img {
@@ -450,14 +464,15 @@ About
   }
 }
 
-#about .content h2 {
+.about-content h2 {
   color: #333;
   font-weight: 300;
   font-size: 24px;
   text-align: left;
+  margin-top: 0;
 }
 
-#about .content h3 {
+.about-content h3 {
   color: #777;
   font-weight: 300;
   font-size: 18px;
@@ -466,14 +481,131 @@ About
   text-align: left;
 }
 
-#about .content p {
+.about-content p {
   line-height: 26px;
   text-align: left;
 }
 
-#about .content p:last-child {
+.about-content p:last-child {
   margin-bottom: 0;
 }
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+.about-content .edu-head h5{
+	margin-bottom: 25px !important;
+}
+
+/* ================================
+Education & Experience
+================================= */
+
+.education-section h4 {
+    position: relative;
+	padding-left: 35px;
+	margin: 0;
+	text-align: left;
+}
+.education-section ul li:before {
+    top: -18px;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    content: "";
+    position: absolute;
+    background-color: #00c1c1;
+}
+.education-section h4:before {
+    top: 5px;
+    left: -7px;
+    width: 15px;
+    height: 15px;
+    display: block;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: #00c1c1;
+}
+.education-section ul {
+    list-style: none;
+    padding: 0;
+}
+.education-section ul li {
+    position: relative;
+}
+.education-section ul li:before {
+	top: -18px;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    content: "";
+    position: absolute;
+    background-color: #00c1c1;
+}
+.edu-item {
+    position: relative;
+}
+.edu-item:before {
+    top: 43px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    content: "";
+    position: absolute;
+    background-color: #00c1c1;
+}
+.edu-head{
+    position: relative;
+    padding: 25px 25px 0 80px;
+}
+.edu-head i{
+    top: 12px;
+    left: 9px;
+    width: 36px;
+    height: 36px;
+    display: block;
+    text-align: center;
+    position: absolute;
+}
+.edu-head i:before{
+    top: 25px;
+    left: 25px;
+    z-index: 3;
+    font-size: 30px;
+    line-height: 36px;
+    position: relative;
+}
+.edu-head i:after{
+    top: 15px;
+    left: 15px;
+    width: 36px;
+    height: 36px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: #00c1c1;
+}
+
+.edu-head h5 {
+    color: #00c1c1;
+    font-weight: 700;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+.edu-item .edu-body {
+    padding: 20px 28px;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ================================
 Team
@@ -536,7 +668,7 @@ Review
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 4px;
-	width: 400px;
+	max-width: 400px;
 }
 
 .service .carousel-indicators {
