@@ -496,6 +496,9 @@ border-radius: 5px;
 .about-content .edu-head h5{
 	margin-bottom: 25px !important;
 }
+.progress-bar {
+	background-color: #00c1c1;
+}
 
 /* ================================
 Education & Experience
