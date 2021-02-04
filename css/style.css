@@ -344,11 +344,6 @@ Intro
 .home-section.parallax h3{
 	color: #fff;
 }
-@media (max-width: 768px ) {
-  #intro h2 {
-    font-size: 36px;
-  }
-}
 
 #intro .carousel-inner .item {
   transition-property: opacity;
@@ -633,6 +628,7 @@ Review
     padding: 20px;
 	margin: 30px 20px;
 	border-radius: 5px;
+	border: 5px solid #00c1c1;
     background: #f8f8f8;
 
 }
@@ -670,8 +666,8 @@ Review
 .service .screenshot img{
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: 4px;
 	max-width: 400px;
+	border-radius: 5px;
 }
 
 .service .carousel-indicators {
@@ -1052,9 +1048,31 @@ footer a:hover {
 /* ================================
 more media queries
 ================================= */
+@media (max-width:992px) {
 
+	.service.carousel .item h4, .service.carousel .item p{
+		text-align: center;
+	}
+
+	.service p{
+			margin-bottom: 60px;
+	}
+	.og-expander {
+		background: transparent;
+
+	}
+	.og-details {
+		padding: 0 20px;
+	}
+
+}
 @media (max-width:768px) {
-
+	#intro h2 {
+		font-size: 30px;
+	}
+	#intro h1 {
+		font-size: 40px;
+	}
 	header{
 		padding-bottom: 50px;
 		min-height: 1000px;
@@ -1081,26 +1099,6 @@ more media queries
 	.og-details { float: none; width: 100%; padding: 0 40px; }
 
 }
-
-@media (max-width:992px) {
-
-	.service.carousel .item h4, .service.carousel .item p{
-		text-align: center;
-	}
-
-	.service p{
-			margin-bottom: 60px;
-	}
-	.og-expander {
-		background: transparent;
-
-	}
-	.og-details {
-		padding: 0 20px;
-	}
-
-}
-
 @media (max-width:480px){
 
 	header .carousel-iphone, .detail .screenshot{
