@@ -1,6 +1,6 @@
 Thanks for downloading this theme!
 
-Theme Name: Alstar
-Theme URL: https://bootstrapmade.com/alstar-free-parallax-bootstrap-template/
-Author: BootstrapMade.com
-Author URL: https://bootstrapmade.com
+  Theme Name: Portfolio Muhid
+  Theme URL: https://md-asaduzzaman-muhid.github.io/portfolio/
+  Author: Md.Asaduzzaman
+  Author URL: https://md-asaduzzaman-muhid.github.io/portfolio/

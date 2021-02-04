@@ -1,8 +1,8 @@
 /*
-  Theme Name: Alstar
-  Theme URL: https://bootstrapmade.com/alstar-free-parallax-bootstrap-template/
-  Author: BootstrapMade.com
-  Author URL: https://bootstrapmade.com
+  Theme Name: Portfolio Muhid
+  Theme URL: https://md-asaduzzaman-muhid.github.io/portfolio/
+  Author: Md.Asaduzzaman
+  Author URL: https://md-asaduzzaman-muhid.github.io/portfolio/
 */
 
 /* ================================
@@ -449,15 +449,7 @@ border-radius: 5px;
   max-width: 100%;
 } */
 
-@media (max-width: 768px) {
-  #about .about-img {
-    height: auto;
-  }
-  #about .about-img img {
-    margin-left: 0;
-    padding-bottom: 30px;
-  }
-}
+
 
 .about-content h2 {
   color: #333;
@@ -1095,6 +1087,15 @@ more media queries
 		margin-bottom: 30px;
 	}
 
+	#about .about-img {
+		height: auto;
+	}
+	#about .about-img img {
+		margin-left: 0;
+		padding-bottom: 30px;
+		width: 100%;
+	}
+	  
 	.og-fullimg { display: none; }
 	.og-details { float: none; width: 100%; padding: 0 40px; }
 
