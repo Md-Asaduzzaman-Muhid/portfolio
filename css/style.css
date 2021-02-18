@@ -1060,7 +1060,7 @@ more media queries
 }
 @media (max-width:768px) {
 	#intro h2 {
-		font-size: 30px;
+		font-size: 20px;
 	}
 	#intro h1 {
 		font-size: 40px;
@@ -1098,7 +1098,27 @@ more media queries
 	  
 	.og-fullimg { display: none; }
 	.og-details { float: none; width: 100%; padding: 0 40px; }
-
+	.navbar-default .navbar-brand {
+		font-size: 1.5em;
+	}
+	.review-details {
+		padding: 0px 30px;
+	}
+	.service .screenshot {
+		margin: 10px 20px;
+	}
+	.rating {
+		margin-bottom: 10px;
+	}
+	.service.carousel .item h4{
+		margin-bottom: 0px;
+	}
+	.service.carousel .item p {
+		margin-bottom: 15px;
+	}
+	.home-section {
+		padding: 60px 0px 60px 0px;
+	}
 }
 @media (max-width:480px){
 
