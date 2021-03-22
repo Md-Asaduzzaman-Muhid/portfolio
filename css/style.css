@@ -1038,6 +1038,15 @@ footer a:hover {
 	text-decoration: underline;
 }
 
+.chat_with_me{
+	position: fixed;
+	bottom: 15px;
+	left: 15px;
+}
+.chat_with_me img{
+	max-width: 50px;
+}
+
 /* ================================
 more media queries
 ================================= */

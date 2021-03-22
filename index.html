@@ -60,7 +60,7 @@
 
           <!-- Slide 1 -->
           <div class="item active">
-            <div class="carousel-background"><img src="img/intro/1.jpg" alt=""></div>
+            <div class="carousel-background"><img src="img/intro/1.jpg" alt="bg"></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <img src="img/asaduzzaman.jpg" class="img-responsive" alt="img" />
@@ -315,7 +315,7 @@
  <!-- Services -->
   <section id="services" class="home-section">
     <div class="container">
-    <div class="row">
+      <div class="row">
         <div class="col-md-offset-2 col-md-8">
           <div class="section-heading">
             <h2>My Service</h2>
@@ -352,8 +352,7 @@
                 <p>Web development, building, integrating, scaling and maintaining dynamic software solutions that work via intranet or internet, creating mobile web development solutions, responsive website designs.</p>
               </div>
             </div>
-            </div>
-            <div class="row">
+            
             <div class="col-sm-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
               <div class="box-icon-classic">
                 <div class="icon-main">
@@ -379,9 +378,9 @@
                 </div>
                 <h4 class="box-icon-title">Mobile & Web Application</h4>
                 <p> Create web applications and native mobile apps for Android and ios. Accessible by most mobile devices and supported by all the major browsers.</p>
-              </div>
             </div>
-      </div>
+        </div>
+        </div>
     </div>
   </section>
 
@@ -681,7 +680,37 @@
       </div>
     </div>
   </footer>
+     <!-- <span class="chat_with_me">
+      <a href="https://m.me/md.asaduzzaman.muhid" target="_blank"><img class="img-responsive" src="img/messenger.png" alt="chat"></a>
+  </span>-->
 
+  <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="111274581046534"
+  theme_color="#00c1c1"
+  logged_in_greeting="Hi! How can I help you? Feel free to leave a message. I will replay soon..."
+  logged_out_greeting="Hi! How can I help you? Feel free to leave a message. I will replay soon...">
+      </div>
+ 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- js -->
