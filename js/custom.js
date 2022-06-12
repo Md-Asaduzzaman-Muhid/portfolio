@@ -1,5 +1,13 @@
+particlesJS("particles-js", "particle.json", function(){
+  console.log('gg');
+}
+  );
+
+
+
 (function ($) {
 
+ 
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
