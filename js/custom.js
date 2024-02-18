@@ -1,7 +1,3 @@
-particlesJS("particles-js", "particle.json", function(){
-  console.log('gg');
-}
-  );
 
 
 
